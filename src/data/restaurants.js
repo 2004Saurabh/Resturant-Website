@@ -1,0 +1,50 @@
+export const RESTAURANTS = [
+  {
+    id: 'res-1',
+    name: 'NOCTURNE Flagship & Cellar',
+    tagline: 'Michelin Star Contemporary Dining & Molecular Tandoor',
+    rating: 4.95,
+    reviews: 1420,
+    address: '42 Royal Crescent Avenue, Mayfair, London / Manhattan NY',
+    phone: '+1 (555) 782-9000',
+    email: 'concierge@nocturne.com',
+    openHours: '5:00 PM – 1:00 AM (Tue - Sun)',
+    cuisine: 'Contemporary Modern Indian & Global Tasting',
+    status: 'ACTIVE',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
+    michelinStars: 2,
+    chef: 'Master Chef Saurabh Kumar & Vikramaditya Rao'
+  },
+  {
+    id: 'res-2',
+    name: 'NOCTURNE Sky Lounge & Hearth',
+    tagline: 'Rooftop Observatory Dining & Botanical Mixology',
+    rating: 4.88,
+    reviews: 890,
+    address: 'Level 54, The Obsidian Tower, Downtown Bay',
+    phone: '+1 (555) 782-9011',
+    email: 'sky@nocturne.com',
+    openHours: '6:00 PM – 2:00 AM Daily',
+    cuisine: 'Robata Grill, Wood-Fired Pizza & High Mixology',
+    status: 'ACTIVE',
+    image: 'https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=800&q=80',
+    michelinStars: 1,
+    chef: 'Chef Elena Rostova'
+  },
+  {
+    id: 'res-3',
+    name: 'NOCTURNE Waterfront Pavilion',
+    tagline: 'Coastal Seafood & Charcoal Dum Dining',
+    rating: 4.92,
+    reviews: 670,
+    address: 'Pier 17 Marina Promenade',
+    phone: '+1 (555) 782-9022',
+    email: 'marina@nocturne.com',
+    openHours: '12:00 PM – 11:30 PM Daily',
+    cuisine: 'Coastal Mediterranean, Goan & Sushi Bar',
+    status: 'ACTIVE',
+    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80',
+    michelinStars: 1,
+    chef: 'Chef Marcus Sterling'
+  }
+];

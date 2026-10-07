@@ -1,0 +1,81 @@
+export const DEMO_USERS = [
+  {
+    id: 'usr-1',
+    email: 'user@nocturne.com',
+    name: 'Alexander Sterling',
+    role: 'USER',
+    phone: '+1 (555) 234-5678',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80',
+    address: '742 Evergreen Terrace, Penthouse B',
+    membership: 'Black Diamond Connoisseur',
+    dietaryPreference: 'None',
+    totalSpent: 428.50,
+    ordersCount: 8,
+    reservationsCount: 3,
+    active: true
+  },
+  {
+    id: 'usr-2',
+    email: 'saurabh@123gmail.com',
+    name: 'Saurabh Kumar',
+    role: 'RESTAURANT_OWNER',
+    phone: '+91 98765 43210',
+    avatar: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=200&q=80',
+    restaurantId: 'res-1',
+    restaurantName: 'NOCTURNE Flagship & Cellar',
+    title: 'Executive Chef & Managing Partner (Owner)',
+    active: true
+  },
+  {
+    id: 'usr-3',
+    email: 'admin@nocturne.com',
+    name: 'Genevieve Du Pont',
+    role: 'ADMIN',
+    phone: '+1 (555) 999-0000',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&q=80',
+    title: 'Global Operations Director',
+    active: true
+  },
+  {
+    id: 'usr-4',
+    email: 'sophia.chen@example.com',
+    name: 'Sophia Chen',
+    role: 'USER',
+    phone: '+1 (555) 876-5432',
+    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&q=80',
+    address: '120 Ocean View Boulevard, Suite 40',
+    membership: 'Platinum Member',
+    dietaryPreference: 'Vegetarian',
+    totalSpent: 265.00,
+    ordersCount: 4,
+    reservationsCount: 2,
+    active: true
+  },
+  {
+    id: 'usr-5',
+    email: 'marcus.v@example.com',
+    name: 'Marcus Vance',
+    role: 'USER',
+    phone: '+1 (555) 432-1098',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80',
+    address: '88 Grand Avenue',
+    membership: 'Gold Member',
+    dietaryPreference: 'Spicy Lover',
+    totalSpent: 195.00,
+    ordersCount: 3,
+    reservationsCount: 1,
+    active: true
+  },
+  {
+    id: 'usr-6',
+    email: 'delivery@nocturne.com',
+    name: 'Vikram Singh',
+    role: 'DELIVERY_PARTNER',
+    phone: '+91 98112 34567',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80',
+    vehicle: 'Nocturne Express EV (DL-09-EV-4412)',
+    title: 'Senior Fleet Delivery Partner',
+    rating: '4.9 ★',
+    active: true
+  }
+];
