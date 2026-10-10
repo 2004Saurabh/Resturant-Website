@@ -31,7 +31,7 @@ export const FOOD_ITEMS = [
     price: 390,
     rating: 4.8,
     reviews: 215,
-    image: 'https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=800&q=80',
+    image: '/images/malai-paneer-tikka.png',
     description: 'Creamy paneer skewers glazed with cashew paste, cardamom cream, melted butter, and saffron dust.',
     ingredients: ['Paneer', 'Cashew Paste', 'Fresh Cream', 'Cardamom', 'White Pepper'],
     calories: 440,
