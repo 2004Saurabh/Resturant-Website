@@ -118,7 +118,7 @@ export default function Login() {
       email: 'user@nocturne.com',
       password: 'password123',
       name: 'Alexander Sterling',
-      destination: '/menu',
+      destination: '/',
       icon: User,
       color: 'from-[#D4AF37]/20 to-[#D4AF37]/5 text-[#D4AF37] border-[#D4AF37]/30 hover:border-[#D4AF37]',
       accentColor: '#D4AF37',
@@ -181,7 +181,7 @@ export default function Login() {
           detail: {
             title: `Welcome, ${preset.name}`,
             message: preset.role === 'USER'
-              ? 'Welcome to NOCTURNE. Opening Fine Dining Menu...'
+              ? 'Welcome to NOCTURNE. Taking you to Home page...'
               : `Authorized for ${preset.label}. Accessing ${preset.stationTitle}...`,
             type: 'success'
           }
@@ -217,13 +217,13 @@ export default function Login() {
           ? '/dashboard/delivery'
           : res.user?.role === 'ADMIN'
           ? '/dashboard/admin'
-          : '/menu';
+          : '/';
 
         window.dispatchEvent(new CustomEvent('nocturne_toast', {
           detail: {
             title: 'Access Granted',
             message: res.user?.role === 'USER'
-              ? `Welcome, ${res.user?.name || email}. Opening Fine Dining Menu...`
+              ? `Welcome, ${res.user?.name || email}. Taking you to Home page...`
               : `Welcome, ${res.user?.name || email}. Entering designated station...`,
             type: 'success'
           }
@@ -479,11 +479,11 @@ export default function Login() {
                   type="button"
                   onClick={() => {
                     loginAs('user@nocturne.com', 'USER');
-                    navigate('/menu');
+                    navigate('/');
                   }}
                   className="text-[#D4AF37] hover:underline font-semibold"
                 >
-                  Explore as Guest Connoisseur →
+                  Explore Home as Guest Connoisseur →
                 </button>
               </p>
             </div>

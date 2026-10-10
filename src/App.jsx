@@ -103,8 +103,8 @@ function AppContent() {
       {/* Application Route Views */}
       <main className="flex-1">
         <Routes>
-          {/* Starting Route: If not logged in, starts on 3D Login page; once authenticated, Customer goes directly to /menu, others to /home */}
-          <Route path="/" element={!isLoggedIn ? <Login /> : (role === 'USER' ? <Navigate to="/menu" replace /> : <Home />)} />
+          {/* Main Starting Route: Home page opens first */}
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
 
