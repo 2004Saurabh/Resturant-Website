@@ -43,7 +43,7 @@ export const RESTAURANTS = [
     openHours: '12:00 PM – 11:30 PM Daily',
     cuisine: 'Coastal Mediterranean, Goan & Sushi Bar',
     status: 'ACTIVE',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80',
     michelinStars: 1,
     chef: 'Chef Marcus Sterling'
   }

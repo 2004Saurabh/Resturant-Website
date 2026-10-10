@@ -96,7 +96,7 @@ function Hero3DFallback() {
     <div className="relative w-full h-full flex items-center justify-center">
       <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full p-2 border border-[#D4AF37]/30 bg-gradient-to-tr from-[#141418] to-[#241018] shadow-2xl shadow-black/80 flex items-center justify-center">
         <img
-          src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80"
+          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80"
           alt="Haute Cuisine"
           className="w-64 h-64 sm:w-80 sm:h-80 rounded-full object-cover shadow-2xl"
         />

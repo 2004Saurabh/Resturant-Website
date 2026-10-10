@@ -55,7 +55,8 @@ export default function FoodCard({ dish }) {
         <img
           src={imgSrc}
           alt={dish.name}
-          onError={() => setImgSrc('https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80')}
+          referrerPolicy="no-referrer"
+          onError={() => setImgSrc('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80')}
           className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
           loading="lazy"
         />
