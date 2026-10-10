@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 // Context Providers
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -68,7 +68,7 @@ function ScrollToTop() {
 
 function AppContent() {
   const [searchOpen, setSearchOpen] = useState(false);
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, role } = useAuth();
 
   return (
     <div className="min-h-screen bg-[#0A0A0C] text-[#F7F4EE] flex flex-col relative selection:bg-[#D4AF37]/30 selection:text-white">
@@ -103,8 +103,8 @@ function AppContent() {
       {/* Application Route Views */}
       <main className="flex-1">
         <Routes>
-          {/* Starting Route: If user hasn't logged in, starts on 3D Login page; once authenticated, loads Home */}
-          <Route path="/" element={!isLoggedIn ? <Login /> : <Home />} />
+          {/* Starting Route: If not logged in, starts on 3D Login page; once authenticated, Customer goes directly to /menu, others to /home */}
+          <Route path="/" element={!isLoggedIn ? <Login /> : (role === 'USER' ? <Navigate to="/menu" replace /> : <Home />)} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
 

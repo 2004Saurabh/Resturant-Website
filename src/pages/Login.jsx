@@ -180,7 +180,9 @@ export default function Login() {
         window.dispatchEvent(new CustomEvent('nocturne_toast', {
           detail: {
             title: `Welcome, ${preset.name}`,
-            message: `Authorized for ${preset.label}. Accessing ${preset.stationTitle}...`,
+            message: preset.role === 'USER'
+              ? 'Welcome to NOCTURNE. Opening Fine Dining Menu...'
+              : `Authorized for ${preset.label}. Accessing ${preset.stationTitle}...`,
             type: 'success'
           }
         }));
@@ -220,7 +222,9 @@ export default function Login() {
         window.dispatchEvent(new CustomEvent('nocturne_toast', {
           detail: {
             title: 'Access Granted',
-            message: `Welcome, ${res.user?.name || email}. Entering designated station...`,
+            message: res.user?.role === 'USER'
+              ? `Welcome, ${res.user?.name || email}. Opening Fine Dining Menu...`
+              : `Welcome, ${res.user?.name || email}. Entering designated station...`,
             type: 'success'
           }
         }));

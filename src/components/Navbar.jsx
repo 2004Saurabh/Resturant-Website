@@ -57,7 +57,7 @@ export default function Navbar({ onOpenSearch }) {
   ];
 
   const roleLabels = {
-    USER: { label: 'Guest Connoisseur', icon: User, badgeColor: 'border-[#D4AF37]/30 text-[#D4AF37] bg-[#D4AF37]/10', dashboard: '/dashboard/user' },
+    USER: { label: 'Guest Connoisseur', icon: User, badgeColor: 'border-[#D4AF37]/30 text-[#D4AF37] bg-[#D4AF37]/10', dashboard: '/menu' },
     RESTAURANT_OWNER: { label: 'Executive Chef / Kitchen', icon: UtensilsCrossed, badgeColor: 'border-[#EF4444]/30 text-[#EF4444] bg-[#EF4444]/10', dashboard: '/dashboard/owner' },
     DELIVERY_PARTNER: { label: 'Fleet Delivery Partner', icon: Bike, badgeColor: 'border-cyan-500/30 text-cyan-400 bg-cyan-500/10', dashboard: '/dashboard/delivery' },
     ADMIN: { label: 'Platform Super Admin', icon: ShieldCheck, badgeColor: 'border-blue-500/30 text-blue-400 bg-blue-500/10', dashboard: '/dashboard/admin' },
@@ -208,11 +208,11 @@ export default function Navbar({ onOpenSearch }) {
                         </div>
                       </div>
                       <Link
-                        to={currentRoleConfig.dashboard}
+                        to={role === 'USER' ? '/menu' : currentRoleConfig.dashboard}
                         onClick={() => setRoleDropdownOpen(false)}
                         className="mt-2.5 w-full block text-center py-1.5 rounded-lg bg-[#D4AF37]/15 text-[#D4AF37] hover:bg-[#D4AF37]/25 text-xs font-medium transition-colors"
                       >
-                        Enter {role === 'USER' ? 'User' : role === 'RESTAURANT_OWNER' ? 'Owner' : 'Admin'} Dashboard →
+                        {role === 'USER' ? 'Browse Food Menu →' : role === 'RESTAURANT_OWNER' ? 'Enter Owner Dashboard →' : role === 'DELIVERY_PARTNER' ? 'Enter Delivery Dashboard →' : 'Enter Admin Dashboard →'}
                       </Link>
                     </div>
 
@@ -227,7 +227,7 @@ export default function Navbar({ onOpenSearch }) {
                           onClick={() => {
                             switchRole('USER');
                             setRoleDropdownOpen(false);
-                            navigate('/dashboard/user');
+                            navigate('/menu');
                           }}
                           className={`w-full flex items-center justify-between p-2 rounded-xl text-left text-xs transition-colors ${
                             role === 'USER' ? 'bg-white/10 text-white font-medium' : 'text-[#8E8E99] hover:bg-white/5 hover:text-white'
@@ -407,10 +407,10 @@ export default function Navbar({ onOpenSearch }) {
                   Sign In / Multi-Role Portal
                 </Link>
                 <Link
-                  to="/dashboard/user"
+                  to="/menu"
                   className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-center text-xs uppercase tracking-wider font-semibold text-[#F7F4EE] border border-white/10"
                 >
-                  Customer Dashboard
+                  Browse Food Menu
                 </Link>
                 <div className="grid grid-cols-3 gap-2">
                   <Link
