@@ -1,10 +1,84 @@
 import React, { Suspense, useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, OrbitControls, ContactShadows, MeshDistortMaterial } from '@react-three/drei';
+import { Float, OrbitControls, ContactShadows, useTexture } from '@react-three/drei';
 import { RotateCw, Sparkles, Compass, Award, Flame, Eye } from 'lucide-react';
 import * as THREE from 'three';
 
-// 3D Procedural Haute Cuisine Centerpiece
+// Preload high-definition dish textures for zero-latency course switching
+useTexture.preload('/images/biryani.jpg');
+useTexture.preload('/images/butter-chicken.jpg');
+useTexture.preload('/images/malai-paneer-tikka.png');
+useTexture.preload('/images/dessert.jpg');
+
+// Real 3D Culinary Presentation inside the Luxury Cloche
+function DishPresentation3D({ dishPreset }) {
+  const texture = useTexture(dishPreset.image);
+
+  useEffect(() => {
+    if (texture) {
+      texture.colorSpace = THREE.SRGBColorSpace;
+      texture.needsUpdate = true;
+    }
+  }, [texture]);
+
+  return (
+    <group position={[0, 0.08, 0]}>
+      {/* Matte Obsidian Fine Dining Bowl / Platter Riser */}
+      <mesh position={[0, 0.05, 0]} receiveShadow castShadow>
+        <cylinderGeometry args={[1.36, 1.15, 0.22, 64]} />
+        <meshStandardMaterial
+          color="#16161B"
+          roughness={0.25}
+          metalness={0.7}
+        />
+      </mesh>
+
+      {/* 24K Gold Inlaid Trim on Serving Plate Rim */}
+      <mesh position={[0, 0.165, 0]}>
+        <torusGeometry args={[1.34, 0.035, 16, 64]} />
+        <meshStandardMaterial
+          color="#D4AF37"
+          roughness={0.15}
+          metalness={0.96}
+        />
+      </mesh>
+
+      {/* Real Food Dish Platter Surface (Real Photographic Texture) */}
+      <mesh position={[0, 0.175, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow castShadow>
+        <circleGeometry args={[1.3, 64]} />
+        <meshStandardMaterial
+          map={texture}
+          roughness={0.38}
+          metalness={0.05}
+        />
+      </mesh>
+
+      {/* 3D Volumetric Food Mound with Realistic Curvature & Texture */}
+      <mesh position={[0, 0.18, 0]} rotation={[-Math.PI / 2, 0, 0]} castShadow>
+        <sphereGeometry args={[1.27, 48, 24, 0, Math.PI * 2, 0, Math.PI * 0.24]} />
+        <meshStandardMaterial
+          map={texture}
+          roughness={0.32}
+          metalness={0.06}
+        />
+      </mesh>
+
+      {/* Delicate Golden Glaze Rim Accent */}
+      <mesh position={[0, 0.22, 0]}>
+        <torusGeometry args={[0.95, 0.015, 16, 48]} />
+        <meshStandardMaterial
+          color="#D4AF37"
+          roughness={0.2}
+          metalness={0.9}
+          transparent
+          opacity={0.65}
+        />
+      </mesh>
+    </group>
+  );
+}
+
+// 3D Haute Cuisine Centerpiece with Real Dish and Interactive Cloche
 function CulinaryModel3D({ dishPreset, isAutoSpin }) {
   const groupRef = useRef();
   const ringRef = useRef();
@@ -54,17 +128,8 @@ function CulinaryModel3D({ dishPreset, isAutoSpin }) {
         />
       </mesh>
 
-      {/* Main Gastronomic Core Element */}
-      <mesh position={[0, 0.42, 0]} castShadow>
-        <sphereGeometry args={[dishPreset.sphereRadius || 0.88, 64, 64]} />
-        <MeshDistortMaterial
-          color={dishPreset.foodColor || '#881A2D'}
-          speed={1.8}
-          distort={dishPreset.distort || 0.24}
-          roughness={0.25}
-          metalness={dishPreset.metalness || 0.6}
-        />
-      </mesh>
+      {/* REAL DISH PRESENTATION: High-Res Real Dish Texture on Luxury Platter */}
+      <DishPresentation3D dishPreset={dishPreset} />
 
       {/* Floating Micro-Garnish Orbit */}
       <group ref={ringRef} position={[0, 0.45, 0]}>
@@ -96,7 +161,7 @@ function CulinaryModel3D({ dishPreset, isAutoSpin }) {
         />
       </mesh>
 
-      {/* Handcrafted Golden Finial Top */}
+      {/* Handcrafted Golden Finial Top Handle */}
       <mesh position={[0, 1.88, 0]}>
         <sphereGeometry args={[0.16, 32, 32]} />
         <meshStandardMaterial color="#D4AF37" metalness={0.98} roughness={0.1} />
@@ -136,10 +201,7 @@ export default function Login3DStage({ onSelectDish }) {
       cuisine: 'Awadhi Heritage',
       price: '₹590',
       foodColor: '#D97706',
-      distort: 0.28,
-      metalness: 0.5,
-      sphereRadius: 0.9,
-      image: 'https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&q=80',
+      image: '/images/biryani.jpg',
       tag: 'Chef Signature'
     },
     {
@@ -148,22 +210,16 @@ export default function Login3DStage({ onSelectDish }) {
       cuisine: 'French-Indian Fusion',
       price: '₹650',
       foodColor: '#881A2D',
-      distort: 0.22,
-      metalness: 0.7,
-      sphereRadius: 0.92,
-      image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800&q=80',
+      image: '/images/butter-chicken.jpg',
       tag: 'Michelin Starred'
     },
     {
-      id: 'paneer-tikka',
-      name: 'Charcoal Smoked Paneer Tikka',
+      id: 'malai-paneer-tikka',
+      name: 'Charcoal Smoked Malai Paneer Tikka',
       cuisine: 'North Indian Clay Oven',
-      price: '₹370',
+      price: '₹390',
       foodColor: '#EA580C',
-      distort: 0.18,
-      metalness: 0.4,
-      sphereRadius: 0.85,
-      image: 'https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=800&q=80',
+      image: '/images/malai-paneer-tikka.png',
       tag: 'Artisanal Starter'
     },
     {
@@ -172,10 +228,7 @@ export default function Login3DStage({ onSelectDish }) {
       cuisine: 'Pastry & Confectionery',
       price: '₹420',
       foodColor: '#B45309',
-      distort: 0.15,
-      metalness: 0.9,
-      sphereRadius: 0.88,
-      image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80',
+      image: '/images/dessert.jpg',
       tag: 'Edible 24K Gold'
     }
   ];
