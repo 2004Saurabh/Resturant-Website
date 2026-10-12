@@ -75,7 +75,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li><Link to="/reservation" className="hover:text-[#D4AF37] transition-colors">Interactive 3D Floor Plan</Link></li>
-              <li><Link to="/ai/reservation" className="hover:text-[#D4AF37] transition-colors">AI Table Concierge</Link></li>
+              <li><Link to="/ai/reservation" className="hover:text-[#D4AF37] transition-colors">Reserve Table</Link></li>
               <li><Link to="/dashboard/user" className="hover:text-[#D4AF37] transition-colors">Member Dashboard</Link></li>
               <li><Link to="/favorites" className="hover:text-[#D4AF37] transition-colors">Saved Cellar & Dishes</Link></li>
               <li><Link to="/offers" className="hover:text-[#D4AF37] transition-colors">Exclusive Offers & Combos</Link></li>

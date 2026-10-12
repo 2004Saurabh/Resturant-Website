@@ -443,7 +443,7 @@ export default function Home() {
               className="px-8 py-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-[#F7F4EE] font-bold text-xs uppercase tracking-widest transition-all flex items-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-[#D4AF37]" />
-              <span>AI Table Concierge</span>
+              <span>Reserve Table</span>
             </Link>
           </div>
 
