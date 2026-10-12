@@ -158,7 +158,7 @@ export default function Cart() {
               Your Table is Empty
             </h2>
             <p className="text-xs text-[#8E8E99] mt-2 max-w-md mx-auto leading-relaxed">
-              Your table is waiting for something delicious. Explore our tasting menu or customize your selection through manual food ordering.
+              Your table is waiting for something delicious. Explore our tasting menu or customize your selection through ordering.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
               <Link
@@ -171,7 +171,7 @@ export default function Cart() {
                 to="/manual/food"
                 className="px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-[#F7F4EE] font-bold text-xs uppercase tracking-wider transition-colors"
               >
-                MANUAL ORDER
+                ORDER
               </Link>
             </div>
           </div>

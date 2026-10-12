@@ -61,7 +61,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li><Link to="/menu" className="hover:text-[#D4AF37] transition-colors">Tasting Menu</Link></li>
-              <li><Link to="/manual/food" className="hover:text-[#D4AF37] transition-colors">Manual Food Ordering</Link></li>
+              <li><Link to="/manual/food" className="hover:text-[#D4AF37] transition-colors">Order Food</Link></li>
               <li><Link to="/menu?category=biryani" className="hover:text-[#D4AF37] transition-colors">Dum Pukht Biryani</Link></li>
               <li><Link to="/menu?category=biryani" className="hover:text-[#D4AF37] transition-colors">Dum Pukht Biryani</Link></li>
               <li><Link to="/menu?category=desserts" className="hover:text-[#D4AF37] transition-colors">Pastry Lab</Link></li>

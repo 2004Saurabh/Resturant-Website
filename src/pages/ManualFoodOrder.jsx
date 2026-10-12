@@ -27,7 +27,7 @@ export default function ManualFoodOrder() {
             Artisanal Cellar & Kitchen
           </span>
           <h1 className="font-cinzel text-4xl sm:text-5xl font-black text-[#F7F4EE]">
-            MANUAL GOURMET EXPLORER
+            GOURMET ORDER EXPLORER
           </h1>
           <p className="text-xs sm:text-sm text-[#8E8E99]">
             Exhaustive culinary catalog with 13 regional disciplines, chef notes, and complete ingredient breakdowns.

@@ -103,7 +103,7 @@ export default function Home() {
                 className="px-7 py-4 rounded-2xl bg-[#881A2D] hover:bg-[#A32238] text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 shadow-xl shadow-[#881A2D]/30 flex items-center gap-2 group"
               >
                 <UtensilsCrossed className="w-4 h-4 text-[#D4AF37]" />
-                <span>MANUAL ORDER</span>
+                <span>ORDER</span>
               </Link>
 
               <Link
@@ -150,12 +150,12 @@ export default function Home() {
               transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
               onClick={() => navigate('/manual/food')}
               className="absolute -top-4 right-4 sm:right-10 w-28 h-28 rounded-full border border-dashed border-[#D4AF37]/50 bg-black/60 backdrop-blur-xl p-2 cursor-pointer group hover:scale-110 transition-transform duration-300 hidden sm:flex items-center justify-center shadow-2xl"
-              title="Click for Manual Order"
+              title="Click to Order"
             >
               <div className="w-full h-full rounded-full bg-gradient-to-tr from-[#881A2D]/40 to-transparent flex flex-col items-center justify-center text-center p-2">
                 <UtensilsCrossed className="w-5 h-5 text-[#D4AF37] mb-1" />
                 <span className="text-[8px] font-bold tracking-widest text-[#F7F4EE] uppercase">
-                  MANUAL ORDER
+                  ORDER
                 </span>
                 <span className="text-[7px] text-[#D4AF37]">TAP TO EXPLORE</span>
               </div>
@@ -185,12 +185,12 @@ export default function Home() {
                     <UtensilsCrossed className="w-6 h-6" />
                   </div>
                   <span className="px-3 py-1 rounded-full text-[10px] tracking-widest uppercase bg-[#D4AF37]/15 text-[#D4AF37] border border-[#D4AF37]/30 font-semibold">
-                    Curated Dining Catalog • Manual Ordering
+                    Curated Dining Catalog • Order
                   </span>
                 </div>
 
                 <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#F7F4EE]">
-                  Manual Gourmet Explorer
+                  Gourmet Order Explorer
                 </h2>
 
                 <p className="text-xs sm:text-sm text-[#A0A0AA] max-w-2xl leading-relaxed">
@@ -237,7 +237,7 @@ export default function Home() {
                   className="px-8 py-4 rounded-2xl bg-[#D4AF37] hover:bg-[#E8C766] text-[#0A0A0C] font-bold text-xs uppercase tracking-widest transition-all shadow-xl shadow-[#D4AF37]/20 flex items-center gap-2 group whitespace-nowrap"
                 >
                   <UtensilsCrossed className="w-4 h-4" />
-                  <span>MANUAL FOOD ORDER</span>
+                  <span>ORDER</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
