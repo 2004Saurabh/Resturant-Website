@@ -6,7 +6,17 @@ const FoodContext = createContext();
 
 export const FoodProvider = ({ children }) => {
   const [foods, setFoods] = useState(() => {
-    return getStorageItem(STORAGE_KEYS.OWNER_MENU, FOOD_ITEMS);
+    const cached = getStorageItem(STORAGE_KEYS.OWNER_MENU, null);
+    if (!cached || !Array.isArray(cached)) return FOOD_ITEMS;
+    // Sync latest default images and data while retaining custom items added by user/owner
+    const defaultMap = new Map(FOOD_ITEMS.map(item => [item.id, item]));
+    return cached.map(item => {
+      const defaultItem = defaultMap.get(item.id);
+      if (defaultItem) {
+        return { ...item, image: defaultItem.image, name: defaultItem.name, description: defaultItem.description };
+      }
+      return item;
+    });
   });
 
   const [favorites, setFavorites] = useState(() => {
