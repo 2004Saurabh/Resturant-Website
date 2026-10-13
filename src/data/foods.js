@@ -2634,7 +2634,7 @@ export const FOOD_ITEMS = [
     price: 360,
     rating: 4.9,
     reviews: 640,
-    image: 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Chole_Bathure_Punjabi_Style.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled',
+    image: '/images/chole-bhature.jpg',
     description: 'Puffy deep-fried sourdough bhatura breads paired with dark spicy chickpea masala, pickled carrots, and green chili.',
     ingredients: ['Fermented Bhatura Breads', 'Spiced Chickpeas', 'Pickled Onions', 'Mint Chutney'],
     calories: 780,
